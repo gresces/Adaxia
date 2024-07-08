@@ -19,7 +19,7 @@ std::shared_ptr<std::vector<LogManager::logRequest>>
   LogManager::requestQueue = nullptr;
 
 LogManager::LogManager(const std::string& filepath, int& batchSize) {
-  if (!std::filesystem::is_regular_file(filepath)) {
+  if (!std::filesystem::is_regular_file(filepath) && std::filesystem::exists(filepath)) {
     std::cout << "[[ERROR]] : not a regular file: " << filepath << std::endl;
     std::exit(1);
   }
