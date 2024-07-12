@@ -20,7 +20,7 @@ std::shared_ptr<std::vector<LogManager::logRequest>>
 
 LogManager::LogManager(const std::string& filepath, int& batchSize) {
   if (!std::filesystem::is_regular_file(filepath) && std::filesystem::exists(filepath)) {
-    std::cout << "[[ERROR]] : not a regular file: " << filepath << std::endl;
+    std::cout << "--ERROR-- : not a regular file: " << filepath << std::endl;
     std::exit(1);
   }
   LogManager::logBatchSize = batchSize;
@@ -56,7 +56,7 @@ auto LogManager::writeToFileEnforce() -> void {
   std::ofstream fs;
   fs.open(logFilePath.c_str(), std::ios::app | std::ios::out);
   if (!fs.is_open()) {
-    std::cout << "[[PANIC]] : Open log file failed: " << logFilePath <<std::endl; 
+    std::cout << "--PANIC-- : Open log file failed: " << logFilePath <<std::endl; 
   }
   for (const auto & log : *LogManager::requestQueue) {
     fs << log.date << log.content << std::endl;

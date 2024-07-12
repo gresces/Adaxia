@@ -12,19 +12,39 @@
 
 namespace Adaxia {
 
+struct Setting {
+  // Website
+  struct {
+    uint16_t port;
+  } website_;
+  // How to parse
+
+};
+
 class Config {
+private:
+  static std::unique_ptr<struct Setting> settings;
+
 public:
-  static auto ConfigParse(std::string configFile) -> void;
+  static auto getConfig() -> struct Setting& {
+    assert(settings);
+    return *settings;
+  }
+
+private:
+  static auto ConfigParse(std::string configFile, auto parseFunc) -> void;
 
 // Singleton
 public:
-  auto ConfigInit(std::string filepath) -> void {
+  static auto ConfigInit(std::string filepath) -> void {
+    Config::settings.reset(new struct Setting);
     Config::instance_.reset(new Config(filepath));
   }
-  auto ConfigDelete() -> void {
+  static auto ConfigDelete() -> void {
+    Config::settings.reset();
     Config::instance_.reset();
   }
-  auto getInstance() -> Config {
+  static auto getInstance() -> Config {
     assert(instance_);
     return *instance_;
   }
