@@ -1,0 +1,16 @@
+name = 'Adaxia'
+license = 'MIT'
+licenselink = 'https://github.com/gresces/Adaxia/LICENSE'
+description = 'A very simple hugo theme'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/gresces/Adaxia'
+
+# Taxonomy terms
+tags = ['blog']
+features = ['simple', 'easy-changing', 'just lines']
+
+# If the theme has a single author
+[author]
+  name = 'Guo Yangfan'
+  homepage = 'https://github.com/gresces/'

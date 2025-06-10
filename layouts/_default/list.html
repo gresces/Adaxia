@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<div id="list-container" class="grid-container no-select">
+  <div id="list-container-title" class="outline">
+    <h1 class="center-align">{{ .Title }}</h1>
+    {{ .Content }}
+  </div>
+  <div id="list-container-list" class="outline">
+    {{ range .Pages }}
+    <a href="{{ .RelPermalink }}">
+      <div>
+        <h2 style="margin: 0; overflow-wrap: anywhere;">{{ .LinkTitle }}</h2>
+        <div class="no-a-color">
+          {{ .Summary }}
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

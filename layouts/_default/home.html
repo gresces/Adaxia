@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+<div id="home-container" class="grid-container no-select">
+  
+  <div id="home-container-content">
+    {{ .Content }}
+  </div>
+
+  <div id="home-container-list">
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ range ($pages.GroupByDate "2006") }}
+      <b class="year-title center-align">{{ .Key }}</b>
+      <div class="year-posts">
+        {{ range .Pages.ByDate.Reverse }}
+          <a href="{{ .RelPermalink }}">
+            <div class="date-title-li">
+              <div class="date-title-li-date no-a-color">
+                {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+                {{ $dateHuman := .Date | time.Format "Jan 02" }}
+                <b><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></b>
+              </div>
+              <div></div>
+              <div class="char-limit date-title-li-title">{{ .LinkTitle }}</div>
+            </div>
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}

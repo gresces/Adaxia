@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+
+<head>
+  {{ partial "head.html" . }}
+</head>
+
+<body id="main-container" class="grid-container">
+
+  <a href="/" id="header-icon">
+    {{ partial "header-icon.html" . }}
+  </a>
+
+  <div class="header-menu outline no-select">
+    {{ partial "header-menu.html" . }}
+  </div>
+
+  <div class="header-control outline no-select">
+    {{ partial "header-control.html" . }}
+  </div>
+
+  <div class="main outline">
+    {{ block "main" . }}
+    {{ end }}
+  </div>
+
+  <div class="left-footer outline">
+
+  </div>
+
+  <div class="footer outline">
+    {{ partial "footer.html" . }}
+  </div>
+
+  <div class="right-footer outline">
+
+  </div>
+
+</body>
+
+</html>

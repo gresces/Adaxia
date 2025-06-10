@@ -1,0 +1,5 @@
+{{ if .Page.Params.author }}
+    <p style="text-align: center;">© {{ now.Year }} {{ .Page.Params.author }} | {{ site.Copyright }}</p>
+{{ else }}
+    <p style="text-align: center;">© {{ now.Year }} {{ site.Copyright }}</p>
+{{ end }}

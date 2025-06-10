@@ -1,0 +1,34 @@
+{{ define "main" }}
+
+<div id="tags-container" class="grid-container">
+  <div id="tags-container-title" class="outline">
+    <h1 class="center-align">{{ .Title }}</h1>
+    {{ .Content }}
+  </div>
+  <div id="tags-container-list" class="outline">
+    {{ range .Data.Terms.Alphabetical }}
+    <a href="{{ .Page.RelPermalink }}"><h2>{{ .Page.LinkTitle }} - {{ .Count }}</h2></a>
+    <ul>
+      {{ range .WeightedPages }}
+      <a href="{{ .RelPermalink }}"><li>{{ .LinkTitle }}</li></a>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+{{/*  {{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ range .Pages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+  {{ end }}
+{{ end }}  */}}
+{{/*  {{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ range .Data.Terms.Alphabetical }}
+    <h2><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a> ({{ .Count }})</h2>
+  {{ end }}
+{{ end }}  */}}
