@@ -1,0 +1,5 @@
+<div class="md-codeblock outline">
+{{ $opts := dict "noClasses" "false" }}
+{{ $result := transform.HighlightCodeBlock . $opts }}
+{{ $result.Wrapped }}
+</div>

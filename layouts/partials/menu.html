@@ -34,7 +34,7 @@ Renders a menu for the given menu ID.
       {{- end }}
     {{- end }}
     {{/*  <li>  */}}
-      <a class="menu-list-li"
+      <a class="menu-list-li center-align"
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}

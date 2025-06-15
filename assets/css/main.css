@@ -8,22 +8,12 @@
   font-size: large;
 }
 
-[data-theme="dark"] {
+:root[data-theme="dark"] {
   --text-color: #dadadb;
   --background-color: #000e14;
   --link-color: #FF9933;
   --outline-color: #035677;
   --text-caption-color: #625EF4;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root([data-theme="dark"]) {
-    --text-color: #dadadb;
-    --background-color: #000e14;
-    --link-color: #FF9933;
-    --outline-color: #035677;
-    --text-caption-color: #625EF4;
-  }
 }
 
 body {
@@ -89,6 +79,199 @@ table.md-table {
     padding: 6px 20px;
     text-align: center;
   }
+}
+
+div.md-codeblock {
+  font-family: 'Courier New', Courier, monospace;
+  line-height: normal;
+  font-size: medium;
+  background-color: color-mix(in srgb, var(--background-color) 95%, var(--outline-color)) ;
+
+  .highlight {
+    padding: 0.5rem;
+  }
+
+  pre {
+    margin: 0;
+  }
+}
+
+.chroma {
+  .x {  }
+  .err { color:#a61717;background-color:#e3d2d2 }
+  .cl {  }
+  .lnlinks { outline:none;text-decoration:none;color:inherit }
+  .lntd { vertical-align:top;padding:0;margin:0;border:0; }
+  .lntable { border-spacing:0;padding:0;margin:0;border:0; }
+  .hl { background-color:#e5e5e5 }
+  .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
+  .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
+  .line { display:flex; }
+  .k { color:#000;font-weight:bold }
+  .kc { color:#000;font-weight:bold }
+  .kd { color:#000;font-weight:bold }
+  .kn { color:#000;font-weight:bold }
+  .kp { color:#000;font-weight:bold }
+  .kr { color:#000;font-weight:bold }
+  .kt { color:#458;font-weight:bold }
+  .n {  }
+  .na { color:#008080 }
+  .nb { color:#0086b3 }
+  .bp { color:#999 }
+  .nc { color:#458;font-weight:bold }
+  .no { color:#008080 }
+  .nd { color:#3c5d5d;font-weight:bold }
+  .ni { color:#800080 }
+  .ne { color:#900;font-weight:bold }
+  .nf { color:#900;font-weight:bold }
+  .fm {  }
+  .nl { color:#900;font-weight:bold }
+  .nn { color:#555 }
+  .nx {  }
+  .py {  }
+  .nt { color:#000080 }
+  .nv { color:#008080 }
+  .vc { color:#008080 }
+  .vg { color:#008080 }
+  .vi { color:#008080 }
+  .vm {  }
+  .l {  }
+  .ld {  }
+  .s { color:#d14 }
+  .sa { color:#d14 }
+  .sb { color:#d14 }
+  .sc { color:#d14 }
+  .dl { color:#d14 }
+  .sd { color:#d14 }
+  .s2 { color:#d14 }
+  .se { color:#d14 }
+  .sh { color:#d14 }
+  .si { color:#d14 }
+  .sx { color:#d14 }
+  .sr { color:#009926 }
+  .s1 { color:#d14 }
+  .ss { color:#990073 }
+  .m { color:#099 }
+  .mb { color:#099 }
+  .mf { color:#099 }
+  .mh { color:#099 }
+  .mi { color:#099 }
+  .il { color:#099 }
+  .mo { color:#099 }
+  .o { color:#000;font-weight:bold }
+  .ow { color:#000;font-weight:bold }
+  .p {  }
+  .c { color:#998;font-style:italic }
+  .ch { color:#998;font-style:italic }
+  .cm { color:#998;font-style:italic }
+  .c1 { color:#998;font-style:italic }
+  .cs { color:#999;font-weight:bold;font-style:italic }
+  .cp { color:#999;font-weight:bold;font-style:italic }
+  .cpf { color:#999;font-weight:bold;font-style:italic }
+  .g {  }
+  .gd { color:#000;background-color:#fdd }
+  .ge { color:#000;font-style:italic }
+  .gr { color:#a00 }
+  .gh { color:#999 }
+  .gi { color:#000;background-color:#dfd }
+  .go { color:#888 }
+  .gp { color:#555 }
+  .gs { font-weight:bold }
+  .gu { color:#aaa }
+  .gt { color:#a00 }
+  .gl { text-decoration:underline }
+  .w { color:#bbb }
+}
+
+:root[data-theme="dark"] {
+.bg { color:#e6edf3 }
+.chroma { 
+  color: #e6edf3;
+  .x {  }
+  .err { color:#f85149 }
+  .cl {  }
+  .lnlinks { outline:none;text-decoration:none;color:inherit }
+  .lntd { vertical-align:top;padding:0;margin:0;border:0; }
+  .lntable { border-spacing:0;padding:0;margin:0;border:0; }
+  .hl { background-color:#6e7681 }
+  .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#737679 }
+  .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681 }
+  .line { display:flex; }
+  .k { color:#ff7b72 }
+  .kc { color:#79c0ff }
+  .kd { color:#ff7b72 }
+  .kn { color:#ff7b72 }
+  .kp { color:#79c0ff }
+  .kr { color:#ff7b72 }
+  .kt { color:#ff7b72 }
+  .n {  }
+  .na {  }
+  .nb {  }
+  .bp {  }
+  .nc { color:#f0883e;font-weight:bold }
+  .no { color:#79c0ff;font-weight:bold }
+  .nd { color:#d2a8ff;font-weight:bold }
+  .ni { color:#ffa657 }
+  .ne { color:#f0883e;font-weight:bold }
+  .nf { color:#d2a8ff;font-weight:bold }
+  .fm {  }
+  .nl { color:#79c0ff;font-weight:bold }
+  .nn { color:#ff7b72 }
+  .nx {  }
+  .py { color:#79c0ff }
+  .nt { color:#7ee787 }
+  .nv { color:#79c0ff }
+  .vc {  }
+  .vg {  }
+  .vi {  }
+  .vm {  }
+  .l { color:#a5d6ff }
+  .ld { color:#79c0ff }
+  .s { color:#a5d6ff }
+  .sa { color:#79c0ff }
+  .sb { color:#a5d6ff }
+  .sc { color:#a5d6ff }
+  .dl { color:#79c0ff }
+  .sd { color:#a5d6ff }
+  .s2 { color:#a5d6ff }
+  .se { color:#79c0ff }
+  .sh { color:#79c0ff }
+  .si { color:#a5d6ff }
+  .sx { color:#a5d6ff }
+  .sr { color:#79c0ff }
+  .s1 { color:#a5d6ff }
+  .ss { color:#a5d6ff }
+  .m { color:#a5d6ff }
+  .mb { color:#a5d6ff }
+  .mf { color:#a5d6ff }
+  .mh { color:#a5d6ff }
+  .mi { color:#a5d6ff }
+  .il { color:#a5d6ff }
+  .mo { color:#a5d6ff }
+  .o { color:#ff7b72;font-weight:bold }
+  .ow { color:#ff7b72;font-weight:bold }
+  .p {  }
+  .c { color:#8b949e;font-style:italic }
+  .ch { color:#8b949e;font-style:italic }
+  .cm { color:#8b949e;font-style:italic }
+  .c1 { color:#8b949e;font-style:italic }
+  .cs { color:#8b949e;font-weight:bold;font-style:italic }
+  .cp { color:#8b949e;font-weight:bold;font-style:italic }
+  .cpf { color:#8b949e;font-weight:bold;font-style:italic }
+  .g {  }
+  .gd { color:#ffa198;background-color:#490202 }
+  .ge { font-style:italic }
+  .gr { color:#ffa198 }
+  .gh { color:#79c0ff;font-weight:bold }
+  .gi { color:#56d364;background-color:#0f5323 }
+  .go { color:#8b949e }
+  .gp { color:#8b949e }
+  .gs { font-weight:bold }
+  .gu { color:#79c0ff }
+  .gt { color:#ff7b72 }
+  .gl { text-decoration:underline }
+  .w { color:#6e7681 }
+}
 }
 
 /* Page Settings */
