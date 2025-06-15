@@ -320,6 +320,10 @@ div.md-codeblock {
   grid-area: main;
 }
 
+.right-main {
+  grid-area: right-main;
+}
+
 .left-footer {
   grid-area: left-footer;
 }
