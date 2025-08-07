@@ -9,3 +9,7 @@
 </title>
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
+
+{{ if or .Params.math .Site.Params.math }}
+{{ partialCached "head-math.html" . }}
+{{ end }}

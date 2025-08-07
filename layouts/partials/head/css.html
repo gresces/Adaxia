@@ -7,9 +7,3 @@
     {{- end }}
   {{- end }}
 {{- end }}
-
-{{ if or .Params.math .Site.Params.math }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
-<!-- {{ $css := resources.Get "css/katex.min.css" }} -->
-<!-- <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}"> -->
-{{ end }}
