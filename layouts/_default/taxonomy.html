@@ -1,34 +1,22 @@
 {{ define "main" }}
 
-<div id="tags-container" class="grid-container">
-  <div id="tags-container-title" class="outline">
-    <h1 class="center-align">{{ .Title }}</h1>
+<section id="tags-container" class="no-select">
+  <header id="tags-container-title">
+    <h1>{{ .Title }}</h1>
     {{ .Content }}
-  </div>
-  <div id="tags-container-list" class="outline">
+  </header>
+
+  <div id="tags-container-list">
     {{ range .Data.Terms.Alphabetical }}
-    <a href="{{ .Page.RelPermalink }}"><h2>{{ .Page.LinkTitle }} - {{ .Count }}</h2></a>
-    <ul>
-      {{ range .WeightedPages }}
-      <a href="{{ .RelPermalink }}"><li>{{ .LinkTitle }}</li></a>
-      {{ end }}
-    </ul>
+      <section class="term-group">
+        <h2><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }} <span>{{ .Count }}</span></a></h2>
+        <ul>
+          {{ range .WeightedPages }}
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+      </section>
     {{ end }}
   </div>
-</div>
+</section>
 {{ end }}
-
-{{/*  {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
-{{ end }}  */}}
-{{/*  {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Data.Terms.Alphabetical }}
-    <h2><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a> ({{ .Count }})</h2>
-  {{ end }}
-{{ end }}  */}}

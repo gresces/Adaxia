@@ -5,42 +5,30 @@
   {{ partial "head.html" . }}
 </head>
 
-<body id="main-container" class="grid-container">
+<body>
 
-  <a href="/" id="header-icon">
-    {{ partial "header-icon.html" . }}
-  </a>
+  <header class="site-header no-select">
+    <a href="/" id="header-icon" aria-label="{{ site.Title }}">
+      {{ partial "header-icon.html" . }}
+    </a>
 
-  <div class="header-menu outline no-select">
-    {{ partial "header-menu.html" . }}
-  </div>
+    <div class="header-menu">
+      {{ partial "header-menu.html" . }}
+    </div>
 
-  <div class="header-control outline no-select">
-    {{ partial "header-control.html" . }}
-  </div>
+    <div class="header-control">
+      {{ partial "header-control.html" . }}
+    </div>
+  </header>
 
-  <div class="main outline">
+  <main class="main">
     {{ block "main" . }}
     {{ end }}
-  </div>
+  </main>
 
-  {{ if .TableOfContents }}
-    <div class="right-main">
-      {{ .TableOfContents }}
-    </div>
-  {{ end }}
-
-  <div class="left-footer outline">
-
-  </div>
-
-  <div class="footer outline">
+  <footer class="footer">
     {{ partial "footer.html" . }}
-  </div>
-
-  <div class="right-footer outline">
-
-  </div>
+  </footer>
 
 </body>
 

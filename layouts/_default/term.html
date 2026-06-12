@@ -1,15 +1,16 @@
 {{ define "main" }}
-<div id="tag-container" class="grid-container">
-  <div id="tag-container-title" class="outline">
-    <h1 class="center-align">{{ .Title }}</h1>
+<section id="tag-container" class="no-select">
+  <header id="tag-container-title">
+    <h1>{{ .Title }}</h1>
     {{ .Content }}
-  </div>
-  <div id="tag-container-list" class="outline">
+  </header>
+
+  <div id="tag-container-list">
     <ul>
       {{ range .Pages }}
-      <a href="{{ .RelPermalink }}"><li>{{ .LinkTitle }}</li></a>
+        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
       {{ end }}
     </ul>
   </div>
-</div>
+</section>
 {{ end }}

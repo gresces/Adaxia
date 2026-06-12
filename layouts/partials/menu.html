@@ -11,7 +11,7 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav style="height:100%; display:grid;">
+  <nav>
     <ul id="menu-list">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
@@ -22,10 +22,13 @@ Renders a menu for the given menu ID.
   {{- $page := .page }}
   {{- range .menuEntries }}
     {{- $attrs := dict "href" .URL }}
+    {{- $class := "menu-list-li" }}
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
+      {{- $attrs = merge $attrs (dict "aria-current" "page") }}
+      {{- $class = "menu-list-li active" }}
     {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
+      {{- $attrs = merge $attrs (dict "aria-current" "true") }}
+      {{- $class = "menu-list-li ancestor" }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}
@@ -33,8 +36,8 @@ Renders a menu for the given menu ID.
         {{- $name = . }}
       {{- end }}
     {{- end }}
-    {{/*  <li>  */}}
-      <a class="menu-list-li center-align"
+    <li>
+      <a class="{{ $class }}"
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
@@ -46,6 +49,6 @@ Renders a menu for the given menu ID.
           {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
         </ul>
       {{- end }}
-    {{/*  </li>  */}}
+    </li>
   {{- end }}
 {{- end }}
