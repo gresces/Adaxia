@@ -67,7 +67,7 @@ table.md-table {
 div.md-codeblock {
   font-family: 'Courier New', Courier, monospace;
   line-height: normal;
-  font-size: medium;
+  font-size: 0.9rem;
   background-color: var(--surface-color);
 
   .highlight {
@@ -387,6 +387,10 @@ code {
   font-size: 0.9em;
 }
 
+div.md-codeblock code {
+  font-size: inherit;
+}
+
 /* Single Page Settings */
 .single-container {
   padding-top: clamp(2rem, 8vw, 6rem);
@@ -402,6 +406,42 @@ code {
 
 .single-content {
   font-size: 1.03rem;
+}
+
+.single-content h2,
+.single-content h3,
+.single-content h4,
+.single-content h5,
+.single-content h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.single-content h2 {
+  border-bottom: 1px solid var(--surface-color);
+  padding-bottom: 0.45rem;
+}
+
+.single-content h3 {
+  color: var(--link-color);
+}
+
+.single-content h4 {
+  font-size: 1.08rem;
+  margin: 1.8rem 0 0.65rem;
+}
+
+.single-content h4,
+.single-content h5,
+.single-content h6 {
+  color: var(--muted-color);
+}
+
+.single-content h5,
+.single-content h6 {
+  font-size: 1rem;
+  margin: 1.5rem 0 0.55rem;
 }
 
 /* Home Page Settings */
